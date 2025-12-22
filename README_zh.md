@@ -7,7 +7,7 @@
 
 ![Screenshot](Screenshot.png)
 
-## 📦 安装
+## 📦 安装 
 
 ### 前置要求
 
@@ -156,4 +156,5 @@ cd ~/Code/mars.nvim
 ## 📝 许可证
 
 MIT
+
 
