@@ -20,8 +20,8 @@ Based on [Kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 ### Quick Install
 
 ```bash
-git clone https://github.com/MarsWang42/my-dev-config.git ~/Code/my-dev-config
-cd ~/Code/my-dev-config
+git clone https://github.com/fisheggg/mars.nvim.git ~/Code/mars.nvim
+cd ~/Code/mars.nvim
 ./install.sh
 ```
 
