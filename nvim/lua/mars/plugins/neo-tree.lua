@@ -19,7 +19,7 @@ return {
   },
   lazy = false,
   keys = {
-    { '<C-e>', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     commands = {
@@ -45,7 +45,7 @@ return {
     filesystem = {
       window = {
         mappings = {
-          ['<C-e>'] = 'close_window',
+          ['\\'] = 'close_window',
           ['o'] = 'open',
           ['O'] = {
             'show_help',
