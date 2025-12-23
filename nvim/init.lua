@@ -184,38 +184,39 @@ require('lazy').setup({
     },
   },
 
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  -- { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  {
-    'echasnovski/mini.nvim',
-    config = function()
-      require('mini.ai').setup { n_lines = 500 }
-      require('mini.surround').setup()
+  -- {
+  --   'echasnovski/mini.nvim',
+  --   config = function()
+  --     require('mini.ai').setup { n_lines = 500 }
+  --     require('mini.surround').setup()
 
-      local statusline = require 'mini.statusline'
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+  --     local statusline = require 'mini.statusline'
+  --     statusline.setup { use_icons = vim.g.have_nerd_font }
 
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-    end,
-  },
+  --     ---@diagnostic disable-next-line: duplicate-set-field
+  --     statusline.section_location = function()
+  --       return '%2l:%-2v'
+  --     end
+  --   end,
+  -- },
 
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    main = 'nvim-treesitter.config',
-    opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
-  },
+  -- {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   build = ':TSUpdate',
+  --   main = 'nvim-treesitter.config',
+  --   opts = {
+  --     ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+  --     auto_install = true,
+  --     highlight = {
+  --       enable = true,
+  --       additional_vim_regex_highlighting = { 'ruby' },
+  --     },
+  --     indent = { enable = true, disable = { 'ruby' } },
+  --   },
+  -- },
+
   {
 
     'ggandor/leap.nvim',
@@ -228,72 +229,83 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'christoomey/vim-tmux-navigator',
-    cmd = {
-      'TmuxNavigateLeft',
-      'TmuxNavigateDown',
-      'TmuxNavigateUp',
-      'TmuxNavigateRight',
-      'TmuxNavigatePrevious',
-      'TmuxNavigatorProcessList',
-    },
-    keys = {
-      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
-      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
-      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
-      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
-      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
-    },
-  },
+  -- {
+  --   'christoomey/vim-tmux-navigator',
+  --   cmd = {
+  --     'TmuxNavigateLeft',
+  --     'TmuxNavigateDown',
+  --     'TmuxNavigateUp',
+  --     'TmuxNavigateRight',
+  --     'TmuxNavigatePrevious',
+  --     'TmuxNavigatorProcessList',
+  --   },
+  --   keys = {
+  --     { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+  --     { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+  --     { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+  --     { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+  --     { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+  --   },
+  -- },
 
-  {
-    'NeogitOrg/neogit',
-    lazy = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim',
-      'nvim-telescope/telescope.nvim',
-      'ibhagwan/fzf-lua',
-      'nvim-mini/mini.pick',
-      'folke/snacks.nvim',
-    },
-    cmd = 'Neogit',
-    keys = {
-      { '<leader>ng', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
-    },
-  },
+  -- {
+  --   'NeogitOrg/neogit',
+  --   lazy = true,
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'sindrets/diffview.nvim',
+  --     'nvim-telescope/telescope.nvim',
+  --     'ibhagwan/fzf-lua',
+  --     'nvim-mini/mini.pick',
+  --     'folke/snacks.nvim',
+  --   },
+  --   cmd = 'Neogit',
+  --   keys = {
+  --     { '<leader>ng', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
+  --   },
+  -- },
 
-  {
-    'MagicDuck/grug-far.nvim',
-    config = function()
-      local grug_far = require 'grug-far'
-      local function open_grug_far()
-        if not grug_far.has_instance 'explorer' then
-          grug_far.open { instanceName = 'explorer' }
-        else
-          grug_far.get_instance('explorer'):open()
-        end
-      end
+  -- {
+  --   'MagicDuck/grug-far.nvim',
+  --   config = function()
+  --     local grug_far = require 'grug-far'
+  --     local function open_grug_far()
+  --       if not grug_far.has_instance 'explorer' then
+  --         grug_far.open { instanceName = 'explorer' }
+  --       else
+  --         grug_far.get_instance('explorer'):open()
+  --       end
+  --     end
 
-      grug_far.setup {
-        windowCreationCommand = 'tab split',
-      }
+  --     grug_far.setup {
+  --       windowCreationCommand = 'tab split',
+  --     }
+-- 
+  --     vim.keymap.set('n', '<leader>gs', open_grug_far, { desc = '[G]lobal [S]earch' })
+  --   end,
+  -- },
 
-      vim.keymap.set('n', '<leader>gs', open_grug_far, { desc = '[G]lobal [S]earch' })
-    end,
-  },
+  -- {
+  --   'amitds1997/remote-nvim.nvim',
+  --   version = '*', -- Pin to GitHub releases
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim', -- For standard functions
+  --     'MunifTanjim/nui.nvim', -- To build the plugin UI
+  --     'nvim-telescope/telescope.nvim', -- For picking b/w different remote methods
+  --   },
+  --   config = true,
+  -- },
 
-  require 'mars.plugins.ai',
-  require 'mars.plugins.telescope',
-  require 'mars.plugins.lsp',
-  require 'mars.plugins.indent_line',
-  require 'mars.plugins.lint',
-  require 'mars.plugins.autopairs',
-  require 'mars.plugins.neo-tree',
-  require 'mars.plugins.gitsigns',
-  require 'mars.plugins.greeter',
-  require 'mars.plugins.colortheme',
+  -- require 'mars.plugins.colortheme',
+  -- require 'mars.plugins.ai',
+  -- require 'mars.plugins.telescope',
+  -- require 'mars.plugins.lsp',
+  -- require 'mars.plugins.indent_line',
+  -- require 'mars.plugins.lint',
+  -- require 'mars.plugins.autopairs',
+  -- require 'mars.plugins.neo-tree',
+  -- require 'mars.plugins.gitsigns',
+  -- require 'mars.plugins.greeter',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
