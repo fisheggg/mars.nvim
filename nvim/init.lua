@@ -184,23 +184,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    'xiyaowong/transparent.nvim',
-    priority = 999,
-  },
-
-  {
-    'folke/tokyonight.nvim',
-    priority = 1000,
-    opts = { Transparent = true },
-    config = function()
-      vim.cmd.colorscheme 'tokyonight'
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE', ctermbg = 'NONE' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'NONE', ctermbg = 'NONE' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'NONE', ctermbg = 'NONE' })
-    end,
-  },
-
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   {
@@ -310,6 +293,7 @@ require('lazy').setup({
   require 'mars.plugins.neo-tree',
   require 'mars.plugins.gitsigns',
   require 'mars.plugins.greeter',
+  require 'mars.plugins.colortheme',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
